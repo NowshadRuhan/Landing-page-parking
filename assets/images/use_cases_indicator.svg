@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="10px" viewBox="0 0 27 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>use_cases_indicator</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-746.000000, -2440.000000)">
+        <g id="use_cases_indicator" transform="translate(746.000000, 2440.000000)">
+            <path d="M0.5,5.5 L16.6245155,5.5" id="Line" stroke="#09213A" stroke-linecap="square"></path>
+            <circle id="Oval-2" fill="#09213A" cx="22" cy="5" r="5"></circle>
+        </g>
+    </g>
+</svg>

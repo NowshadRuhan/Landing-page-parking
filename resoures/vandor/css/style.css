@@ -1,0 +1,846 @@
+
+html,
+body {
+    margin: 0;
+    background: url(../images/bg.jpg) no-repeat center;
+            background-size: cover;
+            
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.9;
+    
+	font-family: 'Rosario', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body a {
+    text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	font-family: 'Rosario', sans-serif;
+}
+
+body img {
+    max-width: 100%;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="search"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+	color: #323648;
+}
+li {
+    list-style-type: none;
+}
+p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8em;
+    letter-spacing: 1px;
+    color: #707579;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*-- header --*/
+
+header {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+}
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+}
+
+
+#logo a {
+	float: left;
+    font-size: .8em;
+    display: initial;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 600;
+    padding: 3px 0;
+    border: none;
+}
+#logo a span.fa {
+    color: #e8cd30;
+}
+
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	}
+
+/* Styling the links */
+nav a {
+    color: #ddd;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding-left: 0;
+    padding-right: 0;
+	padding: 10px 0;
+    font-weight: 400;
+}
+
+
+nav ul li ul li:hover { background: #f8f9fa; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	color: #ddd;
+}
+.menu li.active  a{ 
+	color: #fff;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 30px; 
+    background: #fff;
+    padding: 10px;
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+nav ul ul li a {
+    color: #333;
+    padding: 5px 10px;
+    display: block;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 991px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+	.menu li.active a {
+		color: #e8cd30;
+	}
+	nav {
+		margin: 0;
+	}
+	nav a {
+		color: #333;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		padding: 5px 15px;
+		font-size: 20px;
+		text-decoration: none;
+		border: none;
+		float: right;
+		background-color: #fff;
+		color: #e8cd30;
+	}
+	.menu .toggle {
+		float: none;
+		text-align: center;
+		margin: auto;
+		width: 30%;
+		padding: 5px;
+		font-weight: normal;
+		font-size: 15px;
+		letter-spacing: 1px;
+	}
+
+	.toggle:hover {
+		color:#333;
+		background-color: #fff;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+		background: #fff;
+		padding: 15px 0;
+		width:100%;
+		text-align: center;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		padding: 7px 0;
+		}
+	nav a{
+		padding: 5px 0;
+	}
+	nav a:hover {
+		color: #e8cd30;
+	}
+	.login-icon {
+		text-align: center;
+	}
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: transparent;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+	nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #fff; 
+	}
+	nav ul ul li a {
+		font-size: 15px;
+	}
+	ul.inner-ul{
+		padding: 0!important;
+	}
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+		padding: 0;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+.user span.fa {
+    font-size: 25px;
+    color: #fff;
+}
+/*-- //header --*/
+
+
+/*-- banner --*/
+.banner {
+    background: url(../images/bg.jpg) no-repeat center;
+    background-size: cover;
+	position: relative;
+}
+.banner:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+	background: #111;
+}
+.slider-info {
+    position: relative;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+.w3pvt-logo h2,.w3pvt-logo h3 {
+    color: #fff;
+    display: inline-block;
+    font-size: 2.5em;
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+}
+
+.w3pvt-logo p {
+    color: #fff;
+}
+
+.banner-text {
+    padding: 13vw 0 2vw;
+}
+.banner ul.social li {
+    display: inline-block;
+    margin: 8px;
+}
+.banner  ul.social li  a{
+    font-size: 16px;
+    color: #eee;
+    line-height: 26px;
+    letter-spacing: 1px;
+    list-style-type: none;
+}
+/*-- //banner --*/
+
+/*-- popup --*/
+.popup-effect {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+}
+
+.popup-effect:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    background: #fff;
+    border-radius: 4px;
+    max-width: 500px;
+    position: relative;
+    margin: 8em auto;
+    padding: 3em 2em;
+    z-index: 999;
+}
+.popup p {
+    color: #777;
+    font-size: 15px;
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.popup .close:hover {
+    color: #03A9F4;
+}
+/*-- //popup --*/
+
+/*-- about --*/
+.about-grids h4 {
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    line-height: 50px;
+}
+.form-style-agile input[type="text"], .form-style-agile input[type="number"], .form-style-agile input[type="email"], .form-style-agile input[type="password"], select {
+    outline: none;
+    font-size: 16px;
+    border: none;
+    color: #666;
+    letter-spacing: 0.5px;
+    padding: 12px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+	text-transform: capitalize;
+    background: #fff;
+}
+.about-grids .padding {
+    background: #e8cd30;
+    background: #3369e7;
+    background: #191919;
+    padding: 2em;
+}
+.about-grids h5 {
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+button.book-btn {
+    color: #fff;
+    background: #ead032;
+    border: none;
+    padding: 14px 0;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+	border-radius: 0;
+    cursor: pointer;
+    letter-spacing: 2px;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+}
+.about-grids  h6 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/*-- //about --*/
+
+/*-- /app --*/
+.app-devices {
+	margin: 2em 0;
+}
+h3.tittle.mob {
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    line-height: 50px;
+}
+/*-- //app --*/
+
+/*-- footer --*/
+footer {
+    background: #191919;
+}
+.footer_left p,.footer_middle p {
+    font-size: 16px;
+    line-height: 28px;
+    color: #666;
+    letter-spacing: 1px;
+    margin-top: 1.5em;
+}
+.footer_grids h3 {
+    font-size: 25px;
+    color: #eee;
+    letter-spacing: 1px;
+}
+
+.footer_right p,.footer_right p a {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: .5em;
+    color: #666;
+}
+.footer_middle ul li {
+    display: inline-block;
+}
+.footer_middle ul li a {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+.copyright p {
+    color: #666;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+.copyright p  a{
+	color: #888;
+}
+/*-- //footer --*/
+
+/*-- services --*/
+.services {
+    background: #ead032;
+}
+.service-icon {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background: #272833;
+    line-height: 70px;
+    position: relative;
+}
+.service-icon span.fa{
+    font-size: 25px;
+    color: #ead032;
+    line-height: 70px;
+}
+.service-grid h4 {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+.service-grid p {
+    color: #555;
+}
+/*-- //services --*/
+
+/*-- tarrifs --*/
+.tarrifs-grid h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.tarrifs-grid h5 {
+    font-size: 25px;
+	font-weight: 700;
+    letter-spacing: 1px;
+}
+/*-- //tarrifs --*/
+
+/*--  call us --*/
+.customer-call {
+    background: #ead032;
+}
+.customer-call h2 {
+    font-size: 55px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.customer-call h4 {
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.customer-call p {
+    color: #555;
+}
+/*--  //call us --*/
+
+
+/*--  stats --*/
+.stats {
+    background: url(../images/bg1.jpg) no-repeat center;
+    background-size: cover;
+    background: #292929;
+}
+.stats h4 {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.stats p{
+}
+.stats span.fa{
+    font-size: 30px;
+    color: #ead032;
+}
+/*--  //stats --*/
+
+
+/*-- move top --*/
+a.move-top span {
+    color: #666;
+    font-size: 25px;
+}
+/*-- //move top --*/
+
+
+/*-- Responsive design --*/
+
+@media(max-width:1080px) {
+	h3.tittle.mob {
+		font-size: 30px;
+	}
+	.customer-call h2 {
+		font-size: 45px;
+	}
+	.about-grids h4 {
+		font-size: 33px;
+		line-height: 45px;
+	}
+	.about-grids h6 {
+		font-size: 16px;
+	}
+}
+
+@media(max-width:991px) {
+	.slider-info {
+		width: 80%;
+	}
+	.w3pvt-logo h2, .w3pvt-logo h3 {
+		font-size: 3em;
+	}
+	.tarrifs-grid h4 {
+		font-size: 20px;
+	}
+	.stats h4 {
+		font-size: 45px;
+	}
+	.footer_grids h3 {
+		font-size: 21px;
+	}
+}
+
+@media(max-width:768px) {
+	#logo a {
+		float: left;
+		font-size: .7em;
+	}
+	.w3pvt-logo h2, .w3pvt-logo h3 {
+		font-size: 2.6em;
+	}
+}
+@media(max-width:736px) {
+	.about-grids h4 {
+		font-size: 30px;
+		line-height: 35px;
+	}
+	h3.tittle.mob {
+		font-size: 28px;
+	}
+	.about-grids h5 {
+		font-size: 22px;
+	}
+	.banner-text {
+		padding: 19vw 0 2vw;
+	}
+}
+@media(max-width:600px) {
+	.customer-call h2 {
+		font-size: 40px;
+	}
+	.customer-call h4 {
+		font-size: 20px;
+	}
+	.banner-text {
+		padding: 22vw 0 2vw;
+	}
+}
+@media(max-width:568px) {
+	.about-grids h4 {
+		font-size: 27px;
+		letter-spacing: 1px;
+		line-height: 25px;
+	}
+	.about-grids h6 {
+		font-size: 15px;
+	}
+}
+@media(max-width:480px) {
+	h3.tittle.mob {
+		font-size: 26px;
+		letter-spacing: 1px;
+	}
+	.customer-call h2 {
+		font-size: 35px;
+	}
+	.stats h4 {
+		font-size: 40px;
+	}
+	.w3pvt-logo h2, .w3pvt-logo h3 {
+		font-size: 2.2em;
+		letter-spacing: 1px;
+	}
+	.banner-text {
+		padding: 25vw 0 2vw;
+	}
+}
+@media(max-width:415px) {
+	.w3pvt-logo h2, .w3pvt-logo h3 {
+		font-size: 2em;
+		letter-spacing: 1px;
+	}
+	.about-grids h4 {
+		font-size: 24px;
+	}
+	.service-grid h4 {
+		font-size: 20px;
+	}
+	h3.tittle.mob {
+		font-size: 22px;
+		letter-spacing: 1px;
+		line-height: 40px;
+	}
+	.banner-text {
+		padding: 30vw 0 2vw;
+	}
+	.copyright p {
+		font-size: 15px;
+	}
+}
+@media(max-width:384px) {
+	h3.tittle.mob {
+		font-size: 20px;
+		letter-spacing: 1px;
+		line-height: 38px;
+	}
+	.customer-call h2 {
+		font-size: 30px;
+	}
+	.w3pvt-logo h2, .w3pvt-logo h3 {
+		font-size: 1.8em;
+		letter-spacing: 1px;
+	}
+	.about-grids h4 {
+		font-size: 20px;
+	}
+	.about-grids h6 {
+		font-size: 14px;
+	}
+	.stats h4 {
+		font-size: 35px;
+	}
+	.stats span.fa {
+		font-size: 25px;
+	}
+	.footer_grids h3 {
+		font-size: 19px;
+	}
+	.footer_middle ul li a {
+		font-size: 15px;
+	}
+	#logo a {
+		font-size: .65em;
+	}
+	.toggle {
+		padding: 3px 14px;
+	}
+	.tarrifs-grid h5 {
+		font-size: 22px;
+	}
+}
+@media(max-width:375px) {
+	h3.tittle.mob {
+		font-size: 19px;
+		letter-spacing: 1px;
+		line-height: 29px;
+	}
+	.customer-call h4 {
+		font-size: 18px;
+	}
+}
+@media(max-width:320px) {
+	
+}
+
+/*-- //Responsive design --*/

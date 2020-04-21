@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="18px" viewBox="0 0 9 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook-logo (2)</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.01 0.0976666667 8.34316667 0.0976666667 8.34316667 18 0.01 18"></polygon>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1161.000000, -6116.000000)">
+        <g id="facebook-logo-(2)" transform="translate(1161.000000, 6116.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+            <path d="M5.5515,5.9635 L5.5515,4.42116667 C5.5515,4.18933333 5.56183333,4.01033333 5.58333333,3.88333333 C5.6055,3.7565 5.65433333,3.6315 5.7305,3.50833333 C5.80666667,3.38533333 5.92966667,3.30066667 6.09966667,3.25316667 C6.27016667,3.20633333 6.49616667,3.18283333 6.77866667,3.18283333 L8.32166667,3.18283333 L8.32166667,0.0976666667 L5.8555,0.0976666667 C4.42833333,0.0976666667 3.40366667,0.436166667 2.78133333,1.11316667 C2.15816667,1.79033333 1.847,2.78766667 1.847,4.106 L1.847,5.9635 L0,5.9635 L0,9.04883333 L1.847,9.04883333 L1.847,18 L5.5515,18 L5.5515,9.04883333 L8.017,9.04883333 L8.34316667,5.9635 L5.5515,5.9635 Z" id="Fill-1" fill="#3B5998" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>
